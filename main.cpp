@@ -59,6 +59,7 @@ int main(int argc, char** argv){
 	for(int i=0;i<buffer.size();i++){
 		output = output + getCharByte(buffer[i]) + ",";
 	}
-	output = output + "}\n";
+	output = output + "};\n";
+	output = output + "unsigned int " + variableName + "_len = " + std::to_string(buffer.size()) + ";";
 	writeFile(outputFile, output);
 }
